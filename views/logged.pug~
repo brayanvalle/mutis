@@ -1,0 +1,31 @@
+extends index.pug
+
+block content
+
+    div.panels
+        div.leftPane.align
+            div.grid.align
+                form.form.login(method="post", action="/join/"+usrNick)
+                    div.form__field
+                        input.form__input(type="text", name="orgID", placeholder="Comunity ID", required)
+                    div.form__field
+                        input(type="submit", value= "Join")  
+                p.text--center= "Looking for a Comunity? "
+                    a(href="#")= "Look it up" 
+                
+                
+                br
+                br
+                
+                form.form.login(method="post", action="/newComunity")
+                    div.form__field
+                        input.form__input(type="text", name="orgName", placeholder="Comunity Name", required)
+                    div.form__field
+                        input.form__input(type="text", name="orgDesc", placeholder="Comunity Description", required)                    
+                    div.form__field
+                        input(type="submit", value= "Create")  
+                p.text--center= "Create a new Comunity? "
+                    a(href="#")= "Look it up"            
+        div.rightPane.align
+            div.grid.align
+                p.text--center= "Hello " + usrNick         

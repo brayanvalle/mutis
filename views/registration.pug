@@ -1,0 +1,41 @@
+extends index.pug
+
+block content
+
+    div.panels
+        div.leftPane.align
+            div.grid.align
+                
+                if error
+                    p= "An user with that nickname already exists"
+            
+                form.form.login(method="post", action="/newUser")  
+                    div.form__field                         
+                        input.form__input(type="text", name="usrNick", placeholder="User Nick Name", required)   
+                    div.form__field                         
+                        input.form__input(type="text", name="usrName", placeholder="User Name", required)       
+                    div.form__field
+                        input.form__input(type="text", name="usrEmail", placeholder="User Email", required)
+                    div.form__field
+                        input(type="text", name="usrPass", placeholder="Password", required)
+                    div.form__field
+                        input.form__input(type="text", name="usrPassConf", placeholder="Password Confirmation", required)
+                    div.form__field
+                        input(type="submit", value= "Register")
+                        
+                p.text--center= "Create or join a community and let your work FLOW!"
+                
+                
+                            
+        div.rightPane.align            
+            div.grid.align               
+                form.form.login(method="post", action="/login")  
+                    div.form__field                        
+                        input.form__input(type="text", name="usrID", placeholder="User ID", required)
+                    div.form__field
+                        input.form__input(type="text", name="usrPass", placeholder="Password", required)
+                            
+                    div.form__field
+                        input(type="submit", value= "Login")  
+                p.text--center= "Not a member? "
+                    a(href="#")= "Sign up now"                    
